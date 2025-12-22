@@ -1,2 +1,2 @@
-# Adversarial-Qunatization-Distillation
+# Adversarial-Quantization-Distillation
 Adversarial Quantization Distillation for UATR

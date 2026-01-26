@@ -9,7 +9,7 @@ QAD, In preparation for IEEE GRSL
 git clone https://github.com/KNU-LMAP/edge-qad.git
 cd edge-qad
 ```
-2. Create an conda-environment and install package
+2. Create a conda environment and install requirements
 ```bash
 conda create -n qad python=3.8 -y
 conda activate qad

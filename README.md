@@ -1,2 +1,2 @@
-# Adversarial-Quantization-Distillation
-Adversarial Quantization Distillation for UATR
+# QAD(Quantization Adversarial Distillation) Official Github
+QAD(Quantization Adversarial Distillation)

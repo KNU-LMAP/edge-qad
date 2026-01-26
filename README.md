@@ -1,2 +1,2 @@
-# QAD(Quantization Adversarial Distillation) Official Github
+#Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition
 QAD(Quantization Adversarial Distillation)

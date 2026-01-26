@@ -4,10 +4,17 @@ QAD, In preparation for IEEE GRSL
 ## Introduction
 
 ## Installation
-1. Clone This repository and go to QAD folder
+1. Clone this repository and go to QAD folder
 ```bash
 git clone https://github.com/KNU-LMAP/edge-qad.git
 cd edge-qad
+```
+2. Create an conda-environment and install package
+```bash
+conda create -n qad python=3.8 -y
+conda activate qad
+pip install -upgrade pip
+pip install -e .
 ```
 ## QAD : Train & Test
 

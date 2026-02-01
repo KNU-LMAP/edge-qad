@@ -10,7 +10,7 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 ## Evalutation Summary Across The Metrics
 <p align="center">
-  <img src="./assets/Figure 2.png" width="500px">
+  <img src="./assets/figure_2.png" width="500px">
 </p>
 
 ## Installation

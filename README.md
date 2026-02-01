@@ -10,6 +10,7 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 ## Evalutation Summary Across The Metrics
 <div align="center">
+  
 | Strategy | dtype | Acc (%) | MACs | Size (KB) | Inf. $^\dagger$ (ms) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **FAC (Teacher)** | | | | | |

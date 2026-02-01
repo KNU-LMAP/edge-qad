@@ -31,9 +31,7 @@ def calculate_macs(model, device, config, dataset=None):
         )
         + 1
     )
-    # MACs 계산을 위한 더미 입력: [batch, channel, freq, time]
-    input_size = [1, config["student"]["n_input_ch"], config["feats"]["n_mels"], n_frames]
-    # input_size = [1,config["CRNN"]["n_input_ch"], n_frames, config["feats"]["n_mels"]] #[batch_size, channel, Time, Frequency]
+    input_size = [1,config["student"]["n_input_ch"], config["feats"]['n_mels'],n_frames] #[batch_size, channel, Time, Frequency]
     input = torch.randn(input_size).to(device)
     model.to(device)
     if "use_embeddings" in config["student"] and config["student"]["use_embeddings"]:

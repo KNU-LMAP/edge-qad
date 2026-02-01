@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+
+
+# Virtual Environment
+venv/
+.env
+env/
+anaconda3/
+
+*.pt
+*.pth
+
+!checkpoints/
+!checkpoints/*.pt
+
+
+.DS_Store
+Thumbs.db

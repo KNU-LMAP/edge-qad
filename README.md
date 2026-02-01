@@ -9,7 +9,7 @@ QAD, Submitted to **IEEE Geoscience and Remote Sensing Letters(GRSL) 2026**
 To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (AQD)**, a novel framework that integrates knowledge distillation with quantization-aware training to achieve both significant model compression and enhanced recognition performance.
 
 ## Evalutation Summary Across The Metrics
-
+<div align="center">
 | Strategy | dtype | Acc (%) | MACs | Size (KB) | Inf. $^\dagger$ (ms) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **FAC (Teacher)** | | | | | |
@@ -33,7 +33,8 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 | QAT | INT8 | 68.79 ± 0.85 | 1.06 M | 74 | 4.16 ± 0.61 |
 | **QAD (Ours)** | **INT8** | **70.09 ± 0.29** | **1.06 M** | **74** | **4.16 ± 0.61** |
 
-$^\dagger$ : Measured on Raspberry Pi 5
+<p align="left"><sub>$\dagger$ : Measured on Raspberry Pi 5</sub></p>
+</div>
 
 ## Installation
 1. Clone this repository and go to QAD folder

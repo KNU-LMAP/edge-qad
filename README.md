@@ -2,7 +2,9 @@
 QAD, In preparation for **IEEE Geoscience and Remote Sensing Letters(GRSL) 2026**
 
 ## Introduction
-
+<p align="center">
+  <img src="./assets/QAD Figure 1.png" width="800px">
+</p>
 ## Installation
 1. Clone this repository and go to QAD folder
 ```bash
@@ -35,19 +37,19 @@ DeepShip/
     ├── 2.wav
     └── ...
 ```
-2. Go to data/ & Run split_data.py(Set your Raw file root and preprocessing output root)
+2. Go to data/ directory.
+3. Run split_data.py. (Ensure you set the raw_data_root and output_root inside the script or via arguments.)
 ```bash
 cd data/
 python split_data.py
 ```
 
 ## Train
-1. Go to scripts/
+1. Go to scripts/ directory
 ```bash
-cd ..
-cd scripts/
+cd ../scripts/
 ```
-2. Open *.sh file and Set your the preprocessing output root
+2. Open the desired .sh file and set your data_root to the preprocessing output root.
 3. Run *.sh
 ```bash
 chmod +x *.sh

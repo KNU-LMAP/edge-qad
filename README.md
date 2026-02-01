@@ -5,12 +5,35 @@ QAD, Submitted to **IEEE Geoscience and Remote Sensing Letters(GRSL) 2026**
 <p align="center">
   <img src="./assets/QAD Figure 1.png" width="800px">
 </p>
+
 To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (AQD)**, a novel framework that integrates knowledge distillation with quantization-aware training to achieve both significant model compression and enhanced recognition performance.
 
-## QAD Accuracy-Model Size Comparison
-<p align="center">
-  <img src='./assets/figure_2.png' width="800px">
-</p>
+## Evalutation Summary Across The Metrics
+
+| Strategy | dtype | Acc (%) | MACs | Size (KB) | Inf. $^\dagger$ (ms) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **FAC (Teacher)** | | | | | |
+| Reference | FP32 | 72.69 ± 0.86 | 129.45 M | 9602 | 16.97 ± 0.37 |
+| **ShuffleFAC V3** | | | | | |
+| Reference | FP32 | 71.64 ± 1.92 | 9.85 M | 636 | 7.50 ± 1.43 |
+| SKD | FP32 | 72.40 ± 1.01 | 9.85 M | 636 | 7.50 ± 1.43 |
+| AD | FP32 | 72.73 ± 1.24 | 9.85 M | 636 | 7.50 ± 1.43 |
+| QAT | INT8 | 73.59 ± 0.24 | 9.85 M | 238 | 4.67 ± 0.44 |
+| **QAD (Ours)** | **INT8** | **74.11 ± 0.28** | **9.85 M** | **238** | **4.67 ± 0.44** |
+| **ShuffleFAC V2** | | | | | |
+| Reference | FP32 | 71.85 ± 0.85 | 3.06 M | 226 | 6.23 ± 1.20 |
+| SKD | FP32 | 72.21 ± 1.59 | 3.06 M | 226 | 6.23 ± 1.20 |
+| AD | FP32 | 72.52 ± 0.77 | 3.06 M | 226 | 6.23 ± 1.20 |
+| QAT | INT8 | 71.81 ± 0.40 | 3.06 M | 113 | 4.46 ± 0.44 |
+| **QAD (Ours)** | **INT8** | **73.22 ± 0.26** | **3.06 M** | **113** | **4.46 ± 0.44** |
+| **ShuffleFAC V1** | | | | | |
+| Reference | FP32 | 65.71 ± 2.10 | 1.06 M | 116 | 5.61 ± 0.61 |
+| SKD | FP32 | 70.60 ± 0.85 | 1.06 M | 116 | 5.61 ± 0.61 |
+| AD | FP32 | 68.81 ± 1.33 | 1.06 M | 116 | 5.61 ± 0.61 |
+| QAT | INT8 | 68.79 ± 0.85 | 1.06 M | 74 | 4.16 ± 0.61 |
+| **QAD (Ours)** | **INT8** | **70.09 ± 0.29** | **1.06 M** | **74** | **4.16 ± 0.61** |
+
+$^\dagger$ : Measured on Raspberry Pi 5
 
 ## Installation
 1. Clone this repository and go to QAD folder

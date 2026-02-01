@@ -2,6 +2,7 @@
 QAD, In preparation for **IEEE Geoscience and Remote Sensing Letters(GRSL) 2026**
 
 ## Introduction
+To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (AQD)**, a novel framework that integrates knowledge distillation with quantization-aware training to achieve both significant model compression and enhanced recognition performance.
 <p align="center">
   <img src="./assets/QAD Figure 1.png" width="800px">
 </p>

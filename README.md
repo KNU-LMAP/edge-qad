@@ -1,5 +1,5 @@
 # Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition
-QAD, Submitted to **IEEE Geoscience and Remote Sensing Letters(GRSL) 2026**
+QAD, Submitted to **IEEE Embedded Systems Letters(ESL) 2026**
 
 ## Introduction
 <p align="center">

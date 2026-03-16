@@ -8,9 +8,9 @@ QAD, Submitted to **IEEE Embedded Systems Letters(ESL) 2026**
 
 To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (QAD)**, a novel framework that integrates knowledge distillation with quantization-aware training to achieve both significant model compression and enhanced recognition performance.
 
-# Compare to CNN-based Deep Learning Model(include UATR-DIFF-Transformer
+## Performance Benchmarking of CNN-based Models and Transformer
 <p align="center">
-  <img src="./assets/QAD Figure 1.png" width="800px">
+  <img src="./assets/compare_models.png" width="800px">
 </p>
 
 ## Evalutation Summary Across The Metrics

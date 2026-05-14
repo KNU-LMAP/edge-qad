@@ -180,27 +180,50 @@ def main():
             writer = csv.writer(f)
             writer.writerow([epoch, f"{train_loss:.6f}", f"{val_loss:.6f}", f"{val_acc:.6f}", f"{val_f1:.6f}"])
 
-        if val_f1 > best_f1:
+        # If training mode is QAT or QAD, weight model will saving after 10 epoch for stabilizing
+        if epoch >= 10 and val_f1 > best_f1 and args.mode in ['qat', 'qad']:
+                best_f1 = val_f1
+                time_str = datetime.now().strftime("%m%d_%H%M%S")
+                checkpoint = {
+                    'epoch': epoch,
+                    'model_state_dict': student.state_dict(),
+                    'optimizer_s_state_dict': optimizer_s.state_dict(),
+                    'scheduler_s_state_dict': scheduler_s.state_dict(),
+                    'best_f1': best_f1,
+                }
+                if args.mode == 'qad':
+                    checkpoint['optimizer_D_state_dict'] = optimizer_D.state_dict()
+                    checkpoint['gl_projector_state_dict'] = gl_projector.state_dict()
+                    checkpoint['discriminator_state_dict'] = discriminator.state_dict()
+                    
+                print(f"[BEST PERFORMANCE MODEL] : {time_str}\n")
+                torch.save(checkpoint, os.path.join(ckpt_dir, f'best_qat_model_{time_str}.pt'))
+
+        elif val_f1 > best_f1 and args.mode in ['kd', 'ad', 'ref']:
             best_f1 = val_f1
             time_str = datetime.now().strftime("%m%d_%H%M%S")
-            checkpoint = {'epoch': epoch,
-            'model_state_dict': student.state_dict(),
-            'optimizer_s_state_dict': optimizer_s.state_dict(),
-            'optimizer_D_state_dict': optimizer_D.state_dict(),
-            'scheduler_s_state_dict': scheduler_s.state_dict(),
-            'best_f1': best_f1,
-            'gl_projector_state_dict': gl_projector.state_dict(),
-            'discriminator_state_dict': discriminator.state_dict(),
+            checkpoint = {
+                'epoch': epoch,
+                'model_state_dict': student.state_dict(),
+                'optimizer_s_state_dict': optimizer_s.state_dict(),
+                'scheduler_s_state_dict': scheduler_s.state_dict(),
+                'best_f1': best_f1,
             }
+            if args.mode == 'ad':
+                checkpoint['optimizer_D_state_dict'] = optimizer_D.state_dict()
+                checkpoint['gl_projector_state_dict'] = gl_projector.state_dict()
+                checkpoint['discriminator_state_dict'] = discriminator.state_dict()
+                
             print(f"[BEST PERFORMANCE MODEL] : {time_str}\n")
-            torch.save(checkpoint, os.path.join(ckpt_dir, f'best_qat_model_{time_str}.pt'))
+            torch.save(checkpoint, os.path.join(ckpt_dir, f'best_model_{time_str}.pt'))
     if args.mode in ['qat', 'qad']:
         print("\nConverting model to INT8...")
         add_safe_globals([scalar, dtype])
-        best_qat_model = build_qat_student(crnn_cfg)
+        best_qat_model = build_qat_student(crnn_cfg, pretrained_path=None)
         weights_path = os.path.join(ckpt_dir, f'best_qat_model_{time_str}.pt')
+        print(f"Load Best Performance Weight : {weights_path}")
         state = torch.load(weights_path, map_location='cpu', weights_only=False)
-        best_qat_model.load_state_dict(state['model_state_dict'])
+        best_qat_model.load_state_dict(state['model_state_dict'], strict=False)
         best_qat_model.to('cpu').eval()
         quantized_model = torch.quantization.convert(best_qat_model, inplace=True)
 
@@ -209,7 +232,7 @@ def main():
         test_loss, test_acc, test_macro_f1 = test(quantized_model, test_loader, criterion, device=device_cpu)
         print(f"[FINAL INT8 TEST] loss={test_loss:.4f} acc={test_acc:.4f} macro_f1={test_macro_f1:.4f}")
         quantized_model.eval()
-        exam = torch.randn[1,1,128,22]
+        exam = torch.randn([1,1,128,22])
         with torch.no_grad():
             traced = torch.jit.trace(quantized_model, exam.to('cpu'))
         torch.jit.save(traced, f'quantized_classifier_{time_str}.pt')
@@ -217,7 +240,7 @@ def main():
         emissions = tracker.stop()
         print(f"[CodeCarbon] Estimated emissions: {emissions} kg CO2eq")
     else:
-        best_ckpt = os.path.join(ckpt_dir, f'best_{time_str}_{i}.pt')
+        best_ckpt = os.path.join(ckpt_dir, f'best_model_{time_str}.pt')
         if os.path.exists(best_ckpt):
             state = torch.load(best_ckpt, map_location=device)
             student.load_state_dict(state['model_state'])

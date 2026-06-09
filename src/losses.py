@@ -12,15 +12,15 @@ def kd_loss_logits(student_logits, teacher_logits, T: float):
     return F.kl_div(p_s, p_t, reduction='batchmean') * (T * T)
 
 def prepare(features):
-    if features.dim() == 4:          # [B, C, F, T] 형태
+    if features.dim() == 4:          # [B, C, F, T] 
         B, C, F, T = features.shape
-        features = features.view(B, C, -1).mean(dim=2)  # F·T 축 평균 → [B, C]
-    elif features.dim() == 3:        # [B, T, D] 형태
-        features = features.mean(dim=1)                 # T 축 평균 → [B, D]
+        features = features.view(B, C, -1).mean(dim=2)  # F·T axis average → [B, C]
+    elif features.dim() == 3:        # [B, T, D] 
+        features = features.mean(dim=1)                 # T axis average→ [B, D]
     elif features.dim() == 2:
-        pass                          # 이미 [B, D]
+        pass                          # [B, D]
     else:
-        raise ValueError("지원하지 않는 텐서 차원입니다.")
+        raise ValueError("This tensor type not supported")
     return features
 
 def loss_MVD(discriminator, teacher_feats, student_feats):
@@ -42,7 +42,6 @@ def loss_mvg(discriminator, h_s_prime):
     return F.binary_cross_entropy_with_logits(logits, targets)
 
 def loss_proj2(h_T, h_s_prime):
-    '''두 개의 텐서간의 거리 유사도를 계산'''
     h_T = F.adaptive_avg_pool2d(h_T, (1,1))
     return F.mse_loss(h_s_prime, h_T)
 

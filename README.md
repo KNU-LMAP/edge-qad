@@ -11,11 +11,10 @@
 
 To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (QAD)**, a novel framework that integrates **knowledge distillation (KD)** and **quantization-aware training (QAT)** with **Adversarial Training** to achieve both significant model compression and enhanced recognition performance.
 
-**Our contributions are below.
-
-* ** 1. Quantization-Adversarial Distillation** : Restore the information loss during compaction model size (V3 to V1)
-* ** 2. Inferenece Latency - Accuracy Trade-off** : we acheived that reduce inference latency and increase accuracy at QAD V3 compare to the full-precision model. Reducing the model size to 37% and inference latency to 44% compared to the full-precision baseline model.
-* ** 3. Deployment on the Raspberry Pi 5** : Our work measure the performance at real edge device "Rapberry Pi 5", accuracy and latency.**
+## Key Contributions
+* **Quantization-Adversarial Distillation:** Successfully mitigates and restores the information loss incurred during severe model capacity reduction (from V3 down to the ultra-lightweight V1 scale) through a joint quantization-adversarial framework.
+* **Optimized Latency-Accuracy Trade-off:** Achieves superior Pareto efficiency. Notably, QAD V3 compresses the model size to **37%** and slashes inference latency to **44%** compared to the full-precision baseline, while simultaneously enhancing classification accuracy.
+* **Real-World Edge Deployment:** Validates practical embedded feasibility by deploying and benchmarking the exact classification accuracy and execution latency on a commercial edge hardware platform, the **Raspberry Pi 5**.
 
 ## Performance Benchmarking of CNN-based Models and Transformer
 <p align="center">

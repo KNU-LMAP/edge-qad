@@ -1,5 +1,8 @@
-# Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition
-QAD, Submitted to **IEEE Embedded Systems Letters(ESL) 2026**
+<h1 align="center">QAD</h1>
+<p align="center">
+  <strong>Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</strong><br>
+  Submitted to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong>
+</p>
 
 ## Introduction
 <p align="center">
@@ -7,6 +10,11 @@ QAD, Submitted to **IEEE Embedded Systems Letters(ESL) 2026**
 </p>
 
 To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (QAD)**, a novel framework that integrates **knowledge distillation (KD)** and **quantization-aware training (QAT)** with **Adversarial Training** to achieve both significant model compression and enhanced recognition performance.
+
+**Our contributions are below.
+** 1. Quantization-Adversarial Distillation : Restore the information loss during compaction model size (V3 to V1)
+** 2. Inferenece Latency - Accuracy Trade-off : we acheived that reduce inference latency and increase accuracy at QAD V3 compare to the full-precision model. Reducing the model size to 37% and inference latency to 44% compared to the full-precision baseline model.
+** 3. Deployment on the Raspberry Pi 5 : Our work measure the performance at real edge device "Rapberry Pi 5", accuracy and latency.**
 
 ## Performance Benchmarking of CNN-based Models and Transformer
 <p align="center">

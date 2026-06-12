@@ -6,7 +6,7 @@
 
 ## Introduction
 <p align="center">
-  <img src="./assets/QAD Figure 1.png" width="800px">
+  <img src="./assets/QAD Figure 1.png" width="500px">
 </p>
 
 To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (QAD)**, a novel framework that integrates **knowledge distillation (KD)** and **quantization-aware training (QAT)** with **Adversarial Training** to achieve both significant model compression and enhanced recognition performance.

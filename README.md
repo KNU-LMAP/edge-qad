@@ -18,6 +18,8 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
   <img src="./assets/Figure 2.png" width="500px">
 </p>
 
+## Acknowledgement
+Our CQTF (Computation-Quantized Training Framework) implementation is heavily based on and adapted from the official repository: [Xingzhi-Zhou/CQTF_PyTorch](https://github.com/Xingzhi-Zhou/CQTF_PyTorch). We express our gratitude to the original authors for open-sourcing their framework.
 ## Installation
 1. Clone this repository and go to QAD folder
 ```bash

@@ -30,7 +30,7 @@ Our work compared various baseline models (including VGGNet, ResNet, InceptionNe
   <img src="./assets/Figure 2.png" width="500px">
 </p>
 
-Our CQTF (Computation-Quantized Training Framework) implementation is heavily based on and adapted from the official repository: [Xingzhi-Zhou/CQTF_PyTorch](https://github.com/Xingzhi-Zhou/CQTF_PyTorch).
+_Our CQTF (Computation-Quantized Training Framework) implementation is heavily based on and adapted from the official repository: [Xingzhi-Zhou/CQTF_PyTorch](https://github.com/Xingzhi-Zhou/CQTF_PyTorch)._
 
 ## Installation
 1. Clone this repository and go to QAD folder

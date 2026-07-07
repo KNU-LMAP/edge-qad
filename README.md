@@ -2,7 +2,7 @@
 <p align="center">
   <strong>Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</strong><br>
   Major Revision to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong><br>
-  <strong>Dongjun Kim, Sung-Hoon Byun, Sangwook Park</strong>
+  <br><strong>Dongjun Kim, Sung-Hoon Byun, Sangwook Park</strong>
   
 </p>
 

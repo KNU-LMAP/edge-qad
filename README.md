@@ -1,5 +1,10 @@
 <h1 align="center">QAD</h1>
 <p align="center">
+  [![Paper](https://img.shields.io/badge/IEEE_ESL-2026-blue)](논문_링크)
+[![Python](https://img.shields.io/badge/Python-3.8+-green)](https://python.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange)](https://pytorch.org)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Dataset](https://img.shields.io/badge/Dataset-DeepShip-red)](데이터셋_링크)
   <strong>Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</strong><br>
   Minor Revision to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong><br>
   <br><strong>Dongjun Kim, Sung-Hoon Byun, Sangwook Park</strong>

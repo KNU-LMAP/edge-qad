@@ -16,7 +16,7 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 > All results are evaluated on the [DeepShip dataset](https://github.com/irfankamboh/DeepShip) — 
 > a real-world underwater acoustic dataset comprising four vessel classes 
-> (Cargo, Tanker, Passengership, Tug) with over 47 hours of recordings.
+> (Cargo, Tanker, Passengership, Tug) with over 47 hours and 04 minutes of recordings.
 
 ## Key Contributions
 * **Quantization-Adversarial Distillation:** Our QAD jointly integrates Knowledge Distillation, Adversarial Distillation, and Quantization Aware Training to restore the information loss when decreasing the model size.

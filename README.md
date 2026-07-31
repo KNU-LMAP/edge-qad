@@ -34,7 +34,7 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 > † Latency measured on Raspberry Pi 5, single-core (`taskset -c 0`), CPU fixed at 1.5 GHz, DVFS disabled. <br>
 > All accuracy results are based on the DeepShip dataset. <br>
-> QAD consistently outperforms FP32 baselines in accuracy while reducing model size by ~60% and inference latency by ~56% across all variants.
+> QAD consistently outperforms FP32 baselines in accuracy while reducing model size and inference latency across all variants.
 
 <p align="center">
   <img src="./assets/compare_models.png" width="800px">

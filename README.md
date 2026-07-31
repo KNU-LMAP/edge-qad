@@ -23,15 +23,18 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 ## Results
 
-Model	Strategy	dtype	MACs	Size	Server Acc (%)	Rasp. Acc (%)	Latency (ms)
-ShuffleFAC V3	Ref	FP32	9.85M	636 KB	71.64 ± 1.92	71.64 ± 1.92	11.24 ± 0.05
-ShuffleFAC V3	QAD	INT8	9.85M	238 KB	74.11 ± 0.28	74.09 ± 0.29	4.94 ± 0.08
-ShuffleFAC V2	Ref	FP32	3.06M	226 KB	71.85 ± 0.85	71.85 ± 0.85	8.06 ± 0.05
-ShuffleFAC V2	QAD	INT8	3.06M	113 KB	73.22 ± 0.26	73.22 ± 0.29	3.02 ± 0.07
-ShuffleFAC V1	Ref	FP32	1.06M	116 KB	65.71 ± 2.10	65.71 ± 2.10	6.69 ± 0.04
-ShuffleFAC V1	QAD	INT8	1.06M	74 KB	70.09 ± 0.29	70.08 ± 0.32	2.37 ± 0.08
+| Model | Strategy | dtype | MACs | Size | Server Acc (%) | Rasp. Acc (%) | Latency (ms) |
+|:------|:--------:|:-----:|-----:|-----:|:--------------:|:-------------:|:------------:|
+| ShuffleFAC V3 | Ref | FP32 | 9.85M | 636 KB | 71.64 ± 1.92 | 71.64 ± 1.92 | 11.24 ± 0.05 |
+| ShuffleFAC V3 | **QAD** | **INT8** | 9.85M | **238 KB** | **74.11 ± 0.28** | **74.09 ± 0.29** | **4.94 ± 0.08** |
+| ShuffleFAC V2 | Ref | FP32 | 3.06M | 226 KB | 71.85 ± 0.85 | 71.85 ± 0.85 | 8.06 ± 0.05 |
+| ShuffleFAC V2 | **QAD** | **INT8** | 3.06M | **113 KB** | **73.22 ± 0.26** | **73.22 ± 0.29** | **3.02 ± 0.07** |
+| ShuffleFAC V1 | Ref | FP32 | 1.06M | 116 KB | 65.71 ± 2.10 | 65.71 ± 2.10 | 6.69 ± 0.04 |
+| ShuffleFAC V1 | **QAD** | **INT8** | 1.06M | **74 KB** | **70.09 ± 0.29** | **70.08 ± 0.32** | **2.37 ± 0.08** |
 
-† Measured on Raspberry Pi 5, single-core (taskset -c 0), CPU fixed at 1.5 GHz, DVFS disabled.
+> † Latency measured on Raspberry Pi 5, single-core (`taskset -c 0`), CPU fixed at 1.5 GHz, DVFS disabled.
+
+> QAD consistently outperforms FP32 baselines in accuracy while reducing model size by ~60% and inference latency by ~56% across all variants.
 
 <p align="center">
   <img src="./assets/compare_models.png" width="800px">

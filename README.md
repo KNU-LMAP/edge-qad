@@ -1,12 +1,9 @@
 <!-- [![Paper](https://img.shields.io/badge/IEEE_ESL-2026-blue)](논문_링크) -->
-[![Python](https://img.shields.io/badge/Python-3.8+-green)](https://python.org)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange)](https://pytorch.org)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
-[![Dataset](https://img.shields.io/badge/Dataset-DeepShip-red)](https://github.com/irfankamboh/DeepShip)
 <h1 align="left">QAD : Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</h1>
 <p align="left">
   Minor Revision to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong><br>
-  <br><strong>Dongjun Kim, Sung-Hoon Byun, Sangwook Park</strong>
+  Official Implementation of <br>
+  "Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition"
   
 </p>
 

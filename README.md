@@ -2,7 +2,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-green)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange)](https://pytorch.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
-[![Dataset](https://img.shields.io/badge/Dataset-DeepShip-red)](데이터셋_링크)
+[![Dataset](https://img.shields.io/badge/Dataset-DeepShip-red)](https://github.com/irfankamboh/DeepShip)
 <h1 align="center">QAD</h1>
 <p align="center">
   <strong>Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</strong><br>
@@ -11,7 +11,7 @@
   
 </p>
 
-## Introduction
+## Overview
 <p align="center">
   <img src="./assets/QAD Figure 1.png" width="400px">
 </p>
@@ -25,19 +25,18 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 * **Real-World Edge Deployment:** Validates practical embedded feasibility by deploying and measuring the classification accuracy and execution latency on a commercial edge hardware platform, the **Raspberry Pi 5**.
 
-## Performance Benchmarking of CNN-based Models and Transformer
+## Results
 <p align="center">
   <img src="./assets/compare_models.png" width="800px">
 </p>
 
-Our work compared various baseline models (including VGGNet, ResNet, InceptionNet, MobileNet, ShuffleNet, SCAE, MicroNet, UATR-DIFF-Transformer, and AST). The figure above shows that our QAD V3 model achieved the best classification accuracy (**74.11 ± 0.28%**) on the DeepShip dataset while maintaining a significantly smaller model size.
-
-## Evaluation Summary Across The Metrics
 <p align="center">
   <img src="./assets/Figure 2.png" width="500px">
 </p>
 
-_Our CQTF (Computation-Quantized Training Framework) implementation is heavily based on and adapted from the official repository: [Xingzhi-Zhou/CQTF_PyTorch](https://github.com/Xingzhi-Zhou/CQTF_PyTorch)._
+Our work compared various baseline models (including VGGNet, ResNet, InceptionNet, MobileNet, ShuffleNet, SCAE, MicroNet, UATR-DIFF-Transformer, and AST). The figure above shows that our QAD V3 model achieved the best classification accuracy (**74.11 ± 0.28%**) on the DeepShip dataset while maintaining a significantly smaller model size.
+
+## Repository Structure
 
 ## Installation
 1. Clone this repository and go to QAD folder
@@ -50,7 +49,7 @@ cd edge-qad/
 conda env create -f environment.yml
 conda activate QAD
 ```
-## Dataset Preprocessing
+## Dataset 
 1. To reproduce the results, ensure your dataset follows the **Directory Structure** below.
 ```text
 DeepShip/
@@ -78,7 +77,7 @@ cd data/
 python split_data.py
 ```
 
-## Train
+## Training
 1. Go to scripts/ directory
 ```bash
 cd ../scripts/
@@ -93,4 +92,6 @@ chmod +x *.sh
 ./train_ref.sh
 ./train_ad.sh
 ```
+## Aknowledgements
+
 ## Citation

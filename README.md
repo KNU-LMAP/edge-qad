@@ -2,9 +2,9 @@
 <h1 align="left">QAD : Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</h1>
 
   Official Implementation of<br>
-  - Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition <br>
+  - **Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition** <br>
     (Minor Revision to IEEE ESL 2026) <br>
-    by Dongjun Kim, Sung-Hoon Byun, and Sangwook Park
+    by Dongjun Kim, Sung-Hoon Byun, Sangwook Park
 
 
 ## Overview

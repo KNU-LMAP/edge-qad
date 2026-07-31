@@ -2,8 +2,8 @@
 <h1 align="left">QAD : Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</h1>
 <p align="left">
   Minor Revision to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong><br>
-  Official Implementation of <br>
-  "Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition"
+  > Official Implementation of
+  > Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition
   
 </p>
 

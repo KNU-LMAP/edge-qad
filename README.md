@@ -3,7 +3,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange)](https://pytorch.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![Dataset](https://img.shields.io/badge/Dataset-DeepShip-red)](https://github.com/irfankamboh/DeepShip)
-<h1 align="center">QAD</h1>
+<h1 align="left">QAD</h1>
 <p align="center">
   <strong>Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</strong><br>
   Minor Revision to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong><br>
@@ -92,6 +92,12 @@ chmod +x *.sh
 ./train_ref.sh
 ./train_ad.sh
 ```
-## Aknowledgements
+
+
+## Third-Party Code
+_Our CQTF (Computation-Quantized Training Framework) implementation is heavily based on and adapted from the official repository: [Xingzhi-Zhou/CQTF_PyTorch](https://github.com/Xingzhi-Zhou/CQTF_PyTorch)._
+
+## Acknowledgements
+
 
 ## Citation

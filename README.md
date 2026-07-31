@@ -36,16 +36,6 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 > All accuracy results are based on the DeepShip dataset. <br>
 > QAD consistently outperforms FP32 baselines in accuracy while reducing model size and inference latency across all variants.
 
-<p align="center">
-  <img src="./assets/compare_models.png" width="800px">
-</p>
-
-<p align="center">
-  <img src="./assets/Figure 2.png" width="500px">
-</p>
-
-Our work compared various baseline models (including VGGNet, ResNet, InceptionNet, MobileNet, ShuffleNet, SCAE, MicroNet, UATR-DIFF-Transformer, and AST). The figure above shows that our QAD V3 model achieved the best classification accuracy (**74.11 ± 0.28%**) on the DeepShip dataset while maintaining a significantly smaller model size.
-
 ## Repository Structure
 ```text
 edge-qad/

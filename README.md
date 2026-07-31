@@ -12,7 +12,11 @@
   <img src="./assets/QAD figure 1 v2.png" width="800px">
 </p>
 
-To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (QAD)**, a novel framework that integrates **knowledge distillation (KD)** and **quantization-aware training (QAT)** with **Adversarial Training** to achieve both significant model compression and enhanced recognition performance.
+To address the challenges of resource-constrained UATR sensing platforms, we propose **Quantization Adversarial Distillation (QAD)**, a novel framework that integrates **knowledge distillation (KD)** and **Quantization-Aware Training (QAT)** with **Adversarial Training** to achieve both significant model compression and enhanced recognition performance.
+
+> All results are evaluated on the [DeepShip dataset](https://github.com/irfankamboh/DeepShip) — 
+> a real-world underwater acoustic dataset comprising four vessel classes 
+> (Cargo, Tanker, Passengership, Tug) with over 47 hours of recordings.
 
 ## Key Contributions
 * **Quantization-Adversarial Distillation:** Our QAD jointly integrates Knowledge Distillation, Adversarial Distillation, and Quantization Aware Training to restore the information loss when decreasing the model size.

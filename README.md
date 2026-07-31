@@ -1,11 +1,10 @@
-[![Paper](https://img.shields.io/badge/IEEE_ESL-2026-blue)](논문_링크)
+<!-- [![Paper](https://img.shields.io/badge/IEEE_ESL-2026-blue)](논문_링크) -->
 [![Python](https://img.shields.io/badge/Python-3.8+-green)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange)](https://pytorch.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![Dataset](https://img.shields.io/badge/Dataset-DeepShip-red)](https://github.com/irfankamboh/DeepShip)
-<h1 align="left">QAD</h1>
-<p align="center">
-  <strong>Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</strong><br>
+<h1 align="left">QAD : Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition</h1>
+<p align="left">
   Minor Revision to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong><br>
   <br><strong>Dongjun Kim, Sung-Hoon Byun, Sangwook Park</strong>
   
@@ -37,6 +36,24 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 Our work compared various baseline models (including VGGNet, ResNet, InceptionNet, MobileNet, ShuffleNet, SCAE, MicroNet, UATR-DIFF-Transformer, and AST). The figure above shows that our QAD V3 model achieved the best classification accuracy (**74.11 ± 0.28%**) on the DeepShip dataset while maintaining a significantly smaller model size.
 
 ## Repository Structure
+```text
+edge-qad/
+├── assets/          # Figures for .md
+├── checkpoints/     # Pretrained model weights (.pt)
+├── configs/         # YAML config files
+├── data/            # Dataset preprocessing & trainset split 
+├── scripts/         # Training shell scripts (.sh)
+├── src/             # Model definitions and training logic
+│   ├── FAC.py       # FAC(Frequency Aware Convolution) implementation 
+│   ├── losses.py    # KD, QAD loss 
+|   ├── models.py    # build model for QAD (QuantStub, DeQuantStub)
+|   ├── shuffleFAC.py # ShuffleFAC model
+|   ├── train_engine.py # def train,valid,test,ad_train, kd_train
+├── utils/           # Calculate MACs and parameters
+├── environment.yml  # Conda environment
+└── train.py         # Main training 
+
+```
 
 ## Installation
 1. Clone this repository and go to QAD folder
@@ -86,18 +103,18 @@ cd ../scripts/
 3. Run *.sh
 ```bash
 chmod +x *.sh
-./train_qad.sh
-./train_kd.sh
-./train_qat.sh
-./train_ref.sh
-./train_ad.sh
+./train_qad.sh    # 5 iterations for QAD (V3 to V1)
+./train_kd.sh     # 5 iterations for KD(Knowledge Distillation, V3 to V1)
+./train_qat.sh    # 5 iterations for QAT (V3 to V1)
+./train_ref.sh    # 5 iterations for ShuffleFAC (V3 to V1)
+./train_ad.sh     # 5 iterations for AD(Adversarial Distillation)
 ```
 
 
 ## Third-Party Code
 _Our CQTF (Computation-Quantized Training Framework) implementation is heavily based on and adapted from the official repository: [Xingzhi-Zhou/CQTF_PyTorch](https://github.com/Xingzhi-Zhou/CQTF_PyTorch)._
 
-## Acknowledgements
-
+## 🙏 Acknowledgements
+This research was supported by Basic Science Research Program through the National Research Foundation of Korea (NRF) and other institutions.
 
 ## Citation

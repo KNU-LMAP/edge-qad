@@ -32,8 +32,8 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 | ShuffleFAC V1 | Ref | FP32 | 1.06M | 116 KB | 65.71 ± 2.10 | 65.71 ± 2.10 | 6.69 ± 0.04 |
 | ShuffleFAC V1 | **QAD** | **INT8** | 1.06M | **74 KB** | **70.09 ± 0.29** | **70.08 ± 0.32** | **2.37 ± 0.08** |
 
-> † Latency measured on Raspberry Pi 5, single-core (`taskset -c 0`), CPU fixed at 1.5 GHz, DVFS disabled.
-> All accuracy results are based on the DeepShip dataset.
+> † Latency measured on Raspberry Pi 5, single-core (`taskset -c 0`), CPU fixed at 1.5 GHz, DVFS disabled. <br>
+> All accuracy results are based on the DeepShip dataset. <br>
 > QAD consistently outperforms FP32 baselines in accuracy while reducing model size by ~60% and inference latency by ~56% across all variants.
 
 <p align="center">

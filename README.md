@@ -4,10 +4,9 @@
   Minor Revision to <strong>IEEE Embedded Systems Letters(ESL) 2026</strong>
 </p>
 
-<blockquote>
   Official Implementation of<br>
-  Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition
-</blockquote>
+  - Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition
+
 
 ## Overview
 <p align="center">

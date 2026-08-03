@@ -46,7 +46,9 @@ edge-qad/
 ├── assets/          # Figures for .md
 ├── checkpoints/     # Pretrained model weights (.pt)
 ├── configs/         # YAML config files
-├── data/            # Dataset preprocessing & trainset split 
+├── data/            # Dataset preprocessing & trainset split
+|   ├── data_preprocessing.py # dataloader for train, val, and test
+|   ├── split_data.py # split data for train/val/test
 ├── scripts/         # Training shell scripts (.sh)
 ├── src/             # Model definitions and training logic
 │   ├── FAC.py       # FAC(Frequency Aware Convolution) implementation 

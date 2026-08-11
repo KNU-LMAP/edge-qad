@@ -25,6 +25,12 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 * **Real-World Edge Deployment:** Validates practical embedded feasibility by deploying and measuring the classification accuracy and execution latency on a commercial edge hardware platform, the **Raspberry Pi 5**.
 
+## Quantization as the Denoising mechanism
+
+<p align="center">
+  <img src="./assets/multi-class.png" width="1000px">
+</p>
+
 ## Results
 
 | Model | Strategy | dtype | MACs | Size | Server Acc (%) | Rasp. Acc (%) | Latency (ms) |

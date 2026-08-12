@@ -111,8 +111,10 @@ def main():
         student = shuffleFAC(**crnn_cfg).train()
         load_pretrained_weights(student, args.pretrained_path)
 
-    macs, _ = calculate_macs(student, device, configs)
-    total_params, trainable_params = count_parameters(student)
+    dummy_model = copy.deepcopy(student)
+    macs, _ = calculate_macs(dummy_model, device, configs)
+    total_params, trainable_params = count_parameters(dummy_model)
+    del dummy_model
 
     print("---------------------------------------------------------------")
     print("Model Information:")
@@ -135,13 +137,13 @@ def main():
         discriminator.train()
         params_s = list(student.parameters()) + list(gl_projector.parameters())
         optimizer_s = torch.optim.SGD(params_s, lr=args.lr, weight_decay=1e-4, momentum=0.9, nesterov=False) 
-        scheduler_s = torch.optim.lr_scheduler.MultiStepLR(optimizer_s, milestones=[args.epoch*0.4,args.epoch*0.8], gamma=0.1) 
+        scheduler_s = torch.optim.lr_scheduler.MultiStepLR(optimizer_s, milestones=[int(args.epoch*0.4),int(args.epoch*0.8)], gamma=0.1) 
         optimizer_D = torch.optim.SGD(discriminator.parameters(), lr=args.lr_D, weight_decay=1e-4, momentum=0.9)
-        scheduler_D = torch.optim.lr_scheduler.MultiStepLR(optimizer_D, milestones=[args.epoch*0.4, args.epoch*0.8], gamma=0.1)
+        scheduler_D = torch.optim.lr_scheduler.MultiStepLR(optimizer_D, milestones=[int(args.epoch*0.4), int(args.epoch*0.8)], gamma=0.1)
     else:
         param = student.parameters()
         optimizer_s = torch.optim.SGD(param, lr=args.lr, weight_decay=1e-4, momentum=0.9, nesterov=False)
-        scheduler_s = torch.optim.lr_scheduler.MultiStepLR(optimizer_s, milestones=[args.epoch*0.4, args.epoch*0.8], gamma=0.1)
+        scheduler_s = torch.optim.lr_scheduler.MultiStepLR(optimizer_s, milestones=[int(args.epoch*0.4), int(args.epoch*0.8)], gamma=0.1)
 
 
     log_path = './training_log.csv'
@@ -223,7 +225,7 @@ def main():
         weights_path = os.path.join(ckpt_dir, f'best_qat_model_{time_str}.pt')
         print(f"Load Best Performance Weight : {weights_path}")
         state = torch.load(weights_path, map_location='cpu', weights_only=False)
-        best_qat_model.load_state_dict(state['model_state_dict'], strict=False)
+        best_qat_model.load_state_dict(state['model_state_dict'])
         best_qat_model.to('cpu').eval()
         quantized_model = torch.quantization.convert(best_qat_model, inplace=True)
 

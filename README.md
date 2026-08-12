@@ -25,11 +25,13 @@ To address the challenges of resource-constrained UATR sensing platforms, we pro
 
 * **Real-World Edge Deployment:** Validates practical embedded feasibility by deploying and measuring the classification accuracy and execution latency on a commercial edge hardware platform, the **Raspberry Pi 5**.
 
-## Quantization as the Denoising mechanism
+## Quantization as a Denoising mechanism
 
 <p align="center">
   <img src="./assets/multi-class.png" width="1000px">
 </p>
+
+Using ShuffleFAC V3, we visualize the feature maps of the FP32 (floating-point) model and the INT8 (quantized) model, as shown above. As illustrated, the quantization clipping range acts as a magnitude-dependent filter on underwater acoustic signals—suppressing low-amplitude ambient noise while preserving the prominent, high-amplitude features of ship engine sounds. This demonstrates that quantization functions as an inherent denoising mechanism.
 
 ## Results
 

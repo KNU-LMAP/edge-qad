@@ -4,7 +4,7 @@
 >  Official Implementation of<br>
 >  - **Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition** <br>
 >    <!--(Minor Revision to IEEE ESL 2026) <br> -->
->    by Dongjun Kim, Sung-Hoon Byun, Sangwook Park
+>    by Dongjun Kim, Sung-Hoon Byun, Sangwook Park <br>
 >    **(Accepted) IEEE Embedded Systems Letters (ESL) 2026**
 
 

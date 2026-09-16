@@ -1,4 +1,4 @@
-<!-- [![Paper](https://img.shields.io/badge/IEEE_ESL-2026-blue)](논문_링크) -->
+[![Paper](https://img.shields.io/badge/IEEE_ESL-2026-blue)](https://ieeexplore.ieee.org/document/11690630) 
 # QAD : Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition
 **Accepted at IEEE Embedded Systems Letters (ESL) 2026**
 > Official Implementation of<br>

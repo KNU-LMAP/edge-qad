@@ -135,3 +135,16 @@ _Our CQTF (Computation-Quantized Training Framework) implementation is heavily b
 This research was supported by Basic Science Research Program through the National Research Foundation of Korea (NRF) and other institutions.
 
 ## Citation
+If you find QAD useful to your research or work, please kindly cite our paper:
+'''bibtex
+@ARTICLE{11690630,
+  author={Kim, Dongjun and Byun, Sung-Hoon and Park, Sangwook},
+  journal={IEEE Embedded Systems Letters}, 
+  title={Quantization Adversarial Distillation for Embedded Underwater Acoustic Target Recognition}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-1},
+  keywords={Modeling;Quantization (signal);Accuracy;Training;Frequency;Media Access Control;Noise reduction;Underwater acoustic target recognition;Edge deployment;Embedded inference;Quantization},
+  doi={10.1109/LES.2026.3732081}}
+'''
